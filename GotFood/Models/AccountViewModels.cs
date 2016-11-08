@@ -7,6 +7,7 @@ namespace GotFood.Models
     {
         [Required]
         [Display(Name = "Email")]
+        
         public string Email { get; set; }
     }
 
@@ -49,8 +50,8 @@ namespace GotFood.Models
     public class LoginViewModel
     {
         [Required]
+        [EmailAddress(ErrorMessage = "The email format is not valid")]
         [Display(Name = "Email")]
-        [EmailAddress]
         public string Email { get; set; }
 
         [Required]
