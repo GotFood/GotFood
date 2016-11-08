@@ -231,6 +231,14 @@
     <Compile Include="Migrations\201611081834364_RegExp.Designer.cs">
       <DependentUpon>201611081834364_RegExp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611081857300_RegExpUp.cs" />
+    <Compile Include="Migrations\201611081857300_RegExpUp.Designer.cs">
+      <DependentUpon>201611081857300_RegExpUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611081902127_RegExpUpAgain.cs" />
+    <Compile Include="Migrations\201611081902127_RegExpUpAgain.Designer.cs">
+      <DependentUpon>201611081902127_RegExpUpAgain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CharityProfile.cs" />
@@ -348,6 +356,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611081834364_RegExp.resx">
       <DependentUpon>201611081834364_RegExp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611081857300_RegExpUp.resx">
+      <DependentUpon>201611081857300_RegExpUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611081902127_RegExpUpAgain.resx">
+      <DependentUpon>201611081902127_RegExpUpAgain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
