@@ -32,14 +32,19 @@ namespace GotFood.Models
         public string ContactPosition { get; set; }
         [Display(Name ="Phone Number")]
         [Required]
+        [PhoneAttribute(ErrorMessage ="This is not a valid phone number.")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4}).*$", ErrorMessage = "Not a valid Phone number")]
         public string ContactPhone { get; set; }
         [Required]
         [Display(Name ="Email")]
+        [EmailAddress(ErrorMessage = "The email format is not valid")]
         public string ContactEmail { get; set; }
         [Display(Name ="Additional Contact Information")]
         public string AdditionalContactInfo { get; set; }
         [Display(Name ="Food Commonly Needed")]
         public string GenFoodRequest { get; set; }
+        [Display(Name ="Able to Provide Transportation for Food")]
+        public string ProvideTransport { get; set; }
         [Display(Name ="501 3C Number")]
         [Required]
         public string CharityNum { get; set; }

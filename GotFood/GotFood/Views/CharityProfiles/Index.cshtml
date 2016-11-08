@@ -51,6 +51,9 @@
             @Html.DisplayNameFor(model => model.GenFoodRequest)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.ProvideTransport)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.CharityNum)
         </th>
         <th>
@@ -101,10 +104,14 @@
             @Html.DisplayFor(modelItem => item.GenFoodRequest)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.ProvideTransport)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.CharityNum)
         </td>
         <td>
-            @Html.ActionLink(item.Website, item.Website, new { id = item.Website })
+            <a href="http://@item.Website" target="_blank">@item.Website</a>
+            @*@Html.ActionLink(item.Website, item.Website, new { id = item.Website })*@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.CharityID }) |

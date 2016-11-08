@@ -115,6 +115,14 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.ProvideTransport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProvideTransport)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.CharityNum)
         </dt>
 
@@ -127,7 +135,8 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Website)
+            <a href="http://@Model.Website" target="_blank">@Model.Website</a>
+            @*@Html.DisplayFor(model => model.Website)*@
         </dd>
 
     </dl>

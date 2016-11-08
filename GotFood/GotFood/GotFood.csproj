@@ -203,6 +203,35 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611071911333_InitialCreate.cs" />
+    <Compile Include="Migrations\201611071911333_InitialCreate.Designer.cs">
+      <DependentUpon>201611071911333_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611081445566_AddedTransport.cs" />
+    <Compile Include="Migrations\201611081445566_AddedTransport.Designer.cs">
+      <DependentUpon>201611081445566_AddedTransport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611081801528_PhoneNumberValidation.cs" />
+    <Compile Include="Migrations\201611081801528_PhoneNumberValidation.Designer.cs">
+      <DependentUpon>201611081801528_PhoneNumberValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611081810500_PhoneAndEmail.cs" />
+    <Compile Include="Migrations\201611081810500_PhoneAndEmail.Designer.cs">
+      <DependentUpon>201611081810500_PhoneAndEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611081818141_PhoneAgain.cs" />
+    <Compile Include="Migrations\201611081818141_PhoneAgain.Designer.cs">
+      <DependentUpon>201611081818141_PhoneAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611081825368_PhoneAttribute.cs" />
+    <Compile Include="Migrations\201611081825368_PhoneAttribute.Designer.cs">
+      <DependentUpon>201611081825368_PhoneAttribute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611081834364_RegExp.cs" />
+    <Compile Include="Migrations\201611081834364_RegExp.Designer.cs">
+      <DependentUpon>201611081834364_RegExp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CharityProfile.cs" />
     <Compile Include="Models\GotFoodContext.cs" />
@@ -297,6 +326,29 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611071911333_InitialCreate.resx">
+      <DependentUpon>201611071911333_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611081445566_AddedTransport.resx">
+      <DependentUpon>201611081445566_AddedTransport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611081801528_PhoneNumberValidation.resx">
+      <DependentUpon>201611081801528_PhoneNumberValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611081810500_PhoneAndEmail.resx">
+      <DependentUpon>201611081810500_PhoneAndEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611081818141_PhoneAgain.resx">
+      <DependentUpon>201611081818141_PhoneAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611081825368_PhoneAttribute.resx">
+      <DependentUpon>201611081825368_PhoneAttribute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611081834364_RegExp.resx">
+      <DependentUpon>201611081834364_RegExp.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

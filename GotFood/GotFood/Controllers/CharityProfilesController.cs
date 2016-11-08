@@ -46,7 +46,7 @@ namespace GotFood.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CharityID,CharityName,StreetNumber,StreetName,City,State,Zip,MissionStatement,ContactName,ContactPosition,ContactPhone,ContactEmail,AdditionalContactInfo,GenFoodRequest,CharityNum,Website")] CharityProfile charityProfile)
+        public ActionResult Create([Bind(Include = "CharityID,CharityName,StreetNumber,StreetName,City,State,Zip,MissionStatement,ContactName,ContactPosition,ContactPhone,ContactEmail,AdditionalContactInfo,GenFoodRequest,ProvideTransport,CharityNum,Website")] CharityProfile charityProfile)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace GotFood.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CharityID,CharityName,StreetNumber,StreetName,City,State,Zip,MissionStatement,ContactName,ContactPosition,ContactPhone,ContactEmail,AdditionalContactInfo,GenFoodRequest,CharityNum,Website")] CharityProfile charityProfile)
+        public ActionResult Edit([Bind(Include = "CharityID,CharityName,StreetNumber,StreetName,City,State,Zip,MissionStatement,ContactName,ContactPosition,ContactPhone,ContactEmail,AdditionalContactInfo,GenFoodRequest,ProvideTransport,CharityNum,Website")] CharityProfile charityProfile)
         {
             if (ModelState.IsValid)
             {
