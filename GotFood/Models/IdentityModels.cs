@@ -29,5 +29,7 @@ namespace GotFood.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<GotFood.Models.Transport> Transports { get; set; }
     }
 }
