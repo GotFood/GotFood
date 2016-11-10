@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>CharityProfile</h4>
         <hr />
@@ -145,7 +145,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ContactPhone, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ContactPhone, new { htmlAttributes = new { @class = "form-control", placeholder="(999) 999-9999", type="tel" } })
+                @Html.EditorFor(model => model.ContactPhone, new { htmlAttributes = new { @class = "form-control", placeholder = "(999) 999-9999", type = "tel" } })
                 @Html.ValidationMessageFor(model => model.ContactPhone, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -153,7 +153,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ContactEmail, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ContactEmail, new { htmlAttributes = new { @class = "form-control", placeholder="name@email.com" } })
+                @Html.EditorFor(model => model.ContactEmail, new { htmlAttributes = new { @class = "form-control", placeholder = "name@email.com" } })
                 @Html.ValidationMessageFor(model => model.ContactEmail, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -197,7 +197,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Website, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Website, new { htmlAttributes = new { @class = "form-control", placeholder="www.example.com" } })
+                @Html.EditorFor(model => model.Website, new { htmlAttributes = new { @class = "form-control", placeholder = "www.example.com" } })
                 @Html.ValidationMessageFor(model => model.Website, "", new { @class = "text-danger" })
             </div>
         </div>

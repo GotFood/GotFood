@@ -247,6 +247,10 @@
     <Compile Include="Migrations\201611081902127_RegExpUpAgain.Designer.cs">
       <DependentUpon>201611081902127_RegExpUpAgain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611102016094_ChangedStuff.cs" />
+    <Compile Include="Migrations\201611102016094_ChangedStuff.Designer.cs">
+      <DependentUpon>201611102016094_ChangedStuff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CharityPost.cs" />
@@ -418,6 +422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611081902127_RegExpUpAgain.resx">
       <DependentUpon>201611081902127_RegExpUpAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611102016094_ChangedStuff.resx">
+      <DependentUpon>201611102016094_ChangedStuff.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

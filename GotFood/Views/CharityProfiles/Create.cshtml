@@ -7,10 +7,10 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>CharityProfile</h4>
         <hr />
@@ -52,7 +52,7 @@
             <div class="col-md-10">
                 <select name="State">
                     <option>AL</option>
-                    <option>AK</option> 
+                    <option>AK</option>
                     <option>AZ</option>
                     <option>AR</option>
                     <option>CA</option>
@@ -101,7 +101,7 @@
                     <option>WV</option>
                     <option>WI</option>
                     <option>WY</option>
-                   
+
                 </select>
                 @*@Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
@@ -143,7 +143,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ContactPhone, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ContactPhone, new { htmlAttributes = new { @class = "form-control", placeholder="(999) 999-9999", type="tel" } })
+                @Html.EditorFor(model => model.ContactPhone, new { htmlAttributes = new { @class = "form-control", placeholder = "(999) 999-9999", type = "tel" } })
                 @Html.ValidationMessageFor(model => model.ContactPhone, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -151,7 +151,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ContactEmail, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ContactEmail, new { htmlAttributes = new { @class = "form-control", placeholder="name@email.com" } })
+                @Html.EditorFor(model => model.ContactEmail, new { htmlAttributes = new { @class = "form-control", placeholder = "name@email.com" } })
                 @Html.ValidationMessageFor(model => model.ContactEmail, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -196,7 +196,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Website, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Website, new { htmlAttributes = new { @class = "form-control", placeholder="www.example.com" } })
+                @Html.EditorFor(model => model.Website, new { htmlAttributes = new { @class = "form-control", placeholder = "www.example.com" } })
                 @Html.ValidationMessageFor(model => model.Website, "", new { @class = "text-danger" })
             </div>
         </div>
