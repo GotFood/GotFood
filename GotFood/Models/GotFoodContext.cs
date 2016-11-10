@@ -20,5 +20,21 @@ namespace GotFood.Models
         }
 
         public System.Data.Entity.DbSet<GotFood.Models.CharityProfile> CharityProfiles { get; set; }
+
+        public System.Data.Entity.DbSet<GotFood.Models.Provider> Providers { get; set; }
+
+        public System.Data.Entity.DbSet<GotFood.Models.ProviderTransportation> ProviderTransportations { get; set; }
+
+        public System.Data.Entity.DbSet<GotFood.Models.ProviderType> ProviderTypes { get; set; }
+
+        public System.Data.Entity.DbSet<GotFood.Models.Transport> Transports { get; set; }
+
+        public System.Data.Entity.DbSet<GotFood.Models.ProviderPost> ProviderPosts { get; set; }
+
+        public System.Data.Entity.DbSet<GotFood.Models.CharityPost> CharityPosts { get; set; }
+
+        public System.Data.Entity.DbSet<GotFood.Models.TransportPost> TransportPosts { get; set; }
+
+        public System.Data.Entity.DbSet<GotFood.Models.MainFeed> MainFeeds { get; set; }
     }
 }

@@ -13,6 +13,7 @@ namespace GotFood.Models
         public int ProviderPostID { get; set; }
         [ForeignKey("Provider")]
         public int ProviderID { get; set; }
+        public virtual Provider Provider { get; set; }
         [Display(Name = "Date Posted")]
         public DateTime TimeStamp { get; set; }
         [Required]
@@ -30,6 +31,7 @@ namespace GotFood.Models
         public string SpecialTransport { get; set; }
         [Display(Name = "Additional Comments")]
         public string Comments { get; set; }
-        
+
+        public ICollection<MainFeed> ProviderPosts { get; set; }
     }
 }

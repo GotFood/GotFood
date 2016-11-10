@@ -13,6 +13,7 @@ namespace GotFood.Models
         public int TransportPostID { get; set; }
         [ForeignKey("Transport")]
         public int TransportID { get; set; }
+        public virtual Transport Transport { get; set; }
         [Display(Name = "Date Posted")]
         public DateTime TimeStamp { get; set; }
         [Required]
@@ -23,5 +24,7 @@ namespace GotFood.Models
         public DateTime DateAvailable { get; set; }
         [Display(Name = "Additional Comments")]
         public string Comments { get; set; }
+
+        public ICollection<MainFeed> TransportPosts { get; set; }
     }
 }

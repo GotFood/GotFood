@@ -1,0 +1,74 @@
+﻿@model GotFood.Models.CharityPost
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CharityPost</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CharityProfile.CharityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CharityProfile.CharityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeStamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeStamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodRequested)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodRequested)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightRequested)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeightRequested)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PeopleToFeed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PeopleToFeed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateRequested)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateRequested)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CharityPostID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

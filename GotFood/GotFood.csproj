@@ -197,9 +197,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CharityPostsController.cs" />
     <Compile Include="Controllers\CharityProfilesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MainFeedsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProviderPostsController.cs" />
+    <Compile Include="Controllers\ProvidersController.cs" />
+    <Compile Include="Controllers\ProviderTransportationsController.cs" />
+    <Compile Include="Controllers\ProviderTypesController.cs" />
+    <Compile Include="Controllers\TransportPostsController.cs" />
+    <Compile Include="Controllers\TransportsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -245,9 +253,10 @@
     <Compile Include="Models\CharityProfile.cs" />
     <Compile Include="Models\GotFoodContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\MainFeed.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ProviderPost.cs" />
-    <Compile Include="Models\ProviderProfile.cs" />
+    <Compile Include="Models\Provider.cs" />
     <Compile Include="Models\ProviderTransportation.cs" />
     <Compile Include="Models\ProviderType.cs" />
     <Compile Include="Models\Transport.cs" />
@@ -332,6 +341,46 @@
     <Content Include="Views\CharityProfiles\Details.cshtml" />
     <Content Include="Views\CharityProfiles\Edit.cshtml" />
     <Content Include="Views\CharityProfiles\Index.cshtml" />
+    <Content Include="Views\Providers\Create.cshtml" />
+    <Content Include="Views\Providers\Delete.cshtml" />
+    <Content Include="Views\Providers\Details.cshtml" />
+    <Content Include="Views\Providers\Edit.cshtml" />
+    <Content Include="Views\Providers\Index.cshtml" />
+    <Content Include="Views\ProviderTransportations\Create.cshtml" />
+    <Content Include="Views\ProviderTransportations\Delete.cshtml" />
+    <Content Include="Views\ProviderTransportations\Details.cshtml" />
+    <Content Include="Views\ProviderTransportations\Edit.cshtml" />
+    <Content Include="Views\ProviderTransportations\Index.cshtml" />
+    <Content Include="Views\ProviderTypes\Create.cshtml" />
+    <Content Include="Views\ProviderTypes\Delete.cshtml" />
+    <Content Include="Views\ProviderTypes\Details.cshtml" />
+    <Content Include="Views\ProviderTypes\Edit.cshtml" />
+    <Content Include="Views\ProviderTypes\Index.cshtml" />
+    <Content Include="Views\Transports\Create.cshtml" />
+    <Content Include="Views\Transports\Delete.cshtml" />
+    <Content Include="Views\Transports\Details.cshtml" />
+    <Content Include="Views\Transports\Edit.cshtml" />
+    <Content Include="Views\Transports\Index.cshtml" />
+    <Content Include="Views\ProviderPosts\Create.cshtml" />
+    <Content Include="Views\ProviderPosts\Delete.cshtml" />
+    <Content Include="Views\ProviderPosts\Details.cshtml" />
+    <Content Include="Views\ProviderPosts\Edit.cshtml" />
+    <Content Include="Views\ProviderPosts\Index.cshtml" />
+    <Content Include="Views\CharityPosts\Create.cshtml" />
+    <Content Include="Views\CharityPosts\Delete.cshtml" />
+    <Content Include="Views\CharityPosts\Details.cshtml" />
+    <Content Include="Views\CharityPosts\Edit.cshtml" />
+    <Content Include="Views\CharityPosts\Index.cshtml" />
+    <Content Include="Views\TransportPosts\Create.cshtml" />
+    <Content Include="Views\TransportPosts\Delete.cshtml" />
+    <Content Include="Views\TransportPosts\Details.cshtml" />
+    <Content Include="Views\TransportPosts\Edit.cshtml" />
+    <Content Include="Views\TransportPosts\Index.cshtml" />
+    <Content Include="Views\MainFeeds\Create.cshtml" />
+    <Content Include="Views\MainFeeds\Delete.cshtml" />
+    <Content Include="Views\MainFeeds\Details.cshtml" />
+    <Content Include="Views\MainFeeds\Edit.cshtml" />
+    <Content Include="Views\MainFeeds\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

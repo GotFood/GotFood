@@ -1,0 +1,82 @@
+﻿@model GotFood.Models.ProviderPost
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProviderPost</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Provider.OrgName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Provider.OrgName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeStamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeStamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PeopleFed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PeopleFed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PotentialAllergens)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PotentialAllergens)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpirationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpirationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialTransport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialTransport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProviderPostID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

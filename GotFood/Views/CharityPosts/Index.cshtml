@@ -1,0 +1,69 @@
+﻿@model IEnumerable<GotFood.Models.CharityPost>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CharityProfile.CharityName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeStamp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodRequested)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WeightRequested)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PeopleToFeed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateRequested)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CharityProfile.CharityName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeStamp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FoodRequested)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WeightRequested)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PeopleToFeed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateRequested)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CharityPostID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CharityPostID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CharityPostID })
+        </td>
+    </tr>
+}
+
+</table>

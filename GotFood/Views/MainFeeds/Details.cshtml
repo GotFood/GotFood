@@ -1,0 +1,42 @@
+﻿@model GotFood.Models.MainFeed
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MainFeed</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CharityPost.FoodRequested)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CharityPost.FoodRequested)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderPost.FoodType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProviderPost.FoodType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TransportPost.Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TransportPost.Message)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MainFeedID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
