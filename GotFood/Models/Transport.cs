@@ -48,6 +48,5 @@ namespace GotFood.Models
         [Display(Name = "General Availability")]
         public string GeneralAvailability { get; set; }
         public string Website { get; set; }
-
     }
 }
