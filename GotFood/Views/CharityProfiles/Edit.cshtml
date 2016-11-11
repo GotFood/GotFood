@@ -103,9 +103,7 @@
                     <option>WV</option>
                     <option>WI</option>
                     <option>WY</option>
-
                 </select>
-                @*@Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
             </div>
         </div>

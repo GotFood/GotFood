@@ -251,6 +251,10 @@
     <Compile Include="Migrations\201611102016094_ChangedStuff.Designer.cs">
       <DependentUpon>201611102016094_ChangedStuff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611111641164_AddEndTimeAvailable.cs" />
+    <Compile Include="Migrations\201611111641164_AddEndTimeAvailable.Designer.cs">
+      <DependentUpon>201611111641164_AddEndTimeAvailable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CharityPost.cs" />
@@ -425,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611102016094_ChangedStuff.resx">
       <DependentUpon>201611102016094_ChangedStuff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611111641164_AddEndTimeAvailable.resx">
+      <DependentUpon>201611111641164_AddEndTimeAvailable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

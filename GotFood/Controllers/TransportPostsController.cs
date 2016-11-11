@@ -48,7 +48,7 @@ namespace GotFood.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TransportPostID,TransportID,TimeStamp,Message,DateAvailable,Comments")] TransportPost transportPost)
+        public ActionResult Create([Bind(Include = "TransportPostID,TransportID,TimeStamp,Message,StartTimeAvailable,EndTimeAvailable,Comments")] TransportPost transportPost)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace GotFood.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TransportPostID,TransportID,TimeStamp,Message,DateAvailable,Comments")] TransportPost transportPost)
+        public ActionResult Edit([Bind(Include = "TransportPostID,TransportID,TimeStamp,Message,StartTimeAvailable,EndTimeAvailable,Comments")] TransportPost transportPost)
         {
             if (ModelState.IsValid)
             {

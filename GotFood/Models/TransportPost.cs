@@ -20,8 +20,11 @@ namespace GotFood.Models
         [Display(Name = "How are you able to help?")]
         public string Message { get; set; }
         [Required]
-        [Display(Name = "Date Available")]
-        public DateTime DateAvailable { get; set; }
+        [Display(Name = "Availability: Start Time")]
+        public DateTime StartTimeAvailable { get; set; }
+        [Required]
+        [Display(Name = "Availability: End Time")]
+        public DateTime EndTimeAvailable { get; set; }
         [Display(Name = "Additional Comments")]
         public string Comments { get; set; }
 
