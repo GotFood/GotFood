@@ -21,6 +21,12 @@ namespace GotFood.Controllers
             return View(providers.ToList());
         }
 
+        public ActionResult ScoreBoard()
+        {
+            var providers = db.Providers.Include(p => p.ProviderTransportation).Include(p => p.ProviderType);
+            return View(providers.ToList());
+        }
+
         // GET: Providers/Details/5
         public ActionResult Details(int? id)
         {
@@ -49,10 +55,12 @@ namespace GotFood.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProviderID,OrgName,ContactName,ContactEmail,ContactPhone,StreetNumber,StreetName,City,State,ZipCode,Website,Foods,TypeID,TranspoID")] Provider provider)
+        public ActionResult Create([Bind(Include = "ProviderID,OrgName,ContactName,ContactEmail,ContactPhone,StreetNumber,StreetName,City,State,ZipCode,Website,Foods,TypeID,TranspoID,NumOfDonation")] Provider provider)
         {
+            
             if (ModelState.IsValid)
             {
+                
                 db.Providers.Add(provider);
                 db.SaveChanges();
                 return RedirectToAction("Index");

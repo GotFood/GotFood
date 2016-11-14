@@ -31,6 +31,11 @@ namespace GotFood.Models
         public string SpecialTransport { get; set; }
         [Display(Name = "Additional Comments")]
         public string Comments { get; set; }
+        public ProviderPost()
+        {
+            this.StarRating = 0;
+        }
+        public int StarRating { get; set; }
 
         public ICollection<MainFeed> ProviderPosts { get; set; }
     }

@@ -1,0 +1,45 @@
+﻿@*@model IEnumerable<GotFood.Models.ProviderPost>*@
+
+@model IEnumerable<GotFood.Models.Provider>
+
+
+
+
+@{
+    ViewBag.Title = "ScoreBoard";
+}
+
+<h2>ScoreBoard</h2>
+
+<table class="table">
+    <tr>
+      
+        <th>
+            @Html.DisplayNameFor(model => model.OrgName)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.NumOfDonation)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.StarRating)
+        </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.OrgName)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.NumOfDonation)
+            </td>
+       
+        </tr>
+    }
+
+</table>
