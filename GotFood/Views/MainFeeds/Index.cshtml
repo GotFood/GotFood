@@ -53,7 +53,58 @@
 <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
         <h3>Food Available</h3>
-        <table class="table">
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                if (item != null)
+                {
+                    <div class="col-xs-12 col-md-8 col-md-offset-2 chat">
+                        @*<span class="ProviderName">@item.ProviderPost.Provider.OrgName</span>*@
+                        <div class="container">
+                            <h2>@item.ProviderPost.Provider.OrgName</h2>
+                            <!-- Trigger the modal with a button -->
+                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="mega-octicon octicon-info"></i></button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">@item.ProviderPost.Provider.OrgName</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p><a href="mailto:@item.ProviderPost.Provider.ContactEmail">@item.ProviderPost.Provider.ContactEmail</a></p>
+                                            @* More text could go here in a similar format *@
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="TimeStamp">@item.ProviderPost.TimeStamp</span><br />
+
+                        <span id="FoodType">@item.ProviderPost.FoodType</span>
+                        <span id="PeopleFed">@item.ProviderPost.PeopleFed</span>
+                        <span id="Allergens">@item.ProviderPost.PotentialAllergens</span>
+                        <span id="ExpirationDate">@item.ProviderPost.ExpirationDate</span>
+                        <span id="SpecialTransport">@item.ProviderPost.SpecialTransport</span>
+                        <span id="Comments">@item.ProviderPost.Comments</span>
+                    </div>
+                }
+                else
+                {
+                    <p>"There currently are no posts."</p>;
+                }
+            }
+
+        </div>
+
+
+        @*<table class="table">
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.ProviderPost.FoodType)
@@ -68,14 +119,63 @@
                         @Html.DisplayFor(modelItem => item.ProviderPost.FoodType)
                     </td>
                 </tr>
-            }
+            }*@
 
-        </table>
 
     </div>
     <div id="menu1" class="tab-pane fade">
         <h3>Food Needed</h3>
-        <table class="table">
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                if (item != null)
+                {
+                    <div class="col-xs-12 col-md-8 col-md-offset-2 chat">
+                        @*<span class="ProviderName">@item.ProviderPost.Provider.OrgName</span>*@
+                        <div class="container">
+                            <h2>@item.CharityPost.CharityProfile.CharityName</h2>
+                            <!-- Trigger the modal with a button -->
+                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="mega-octicon octicon-info"></i></button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">@item.CharityPost.CharityProfile.CharityName</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p><a href="mailto:@item.CharityPost.CharityProfile.ContactEmail">@item.CharityPost.CharityProfile.ContactEmail</a></p>
+                                            @* More text could go here in a similar format *@
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="TimeStamp">@item.CharityPost.TimeStamp</span><br />
+
+                        <span id="FoodType">@item.CharityPost.FoodRequested</span>
+                        <span id="PeopleFed">@item.CharityPost.WeightRequested</span>
+                        <span id="Allergens">@item.CharityPost.PeopleToFeed</span>
+                        <span id="ExpirationDate">@item.CharityPost.DateRequested</span>
+                        <span id="Comments">@item.CharityPost.Comments</span>
+                    </div>
+                }
+                else
+                {
+                    <p>"There currently are no posts."</p>;
+                }
+            }
+
+        </div>
+
+
+        @*<table class="table">
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.CharityPost.FoodRequested)
@@ -92,12 +192,61 @@
                 </tr>
             }
 
-        </table>
+        </table>*@
 
     </div>
     <div id="menu2" class="tab-pane fade">
         <h3>Food Transportation</h3>
-        <table class="table">
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                if (item != null)
+                {
+                    <div class="col-xs-12 col-md-8 col-md-offset-2 chat">
+                        @*<span class="ProviderName">@item.ProviderPost.Provider.OrgName</span>*@
+                        <div class="container">
+                            <h2>@item.TransportPost.Transport.OrganizationName</h2>
+                            <!-- Trigger the modal with a button -->
+                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="mega-octicon octicon-info"></i></button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">@item.TransportPost.Transport.OrganizationName</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p><a href="mailto:@item.TransportPost.Transport.ContactEmail">@item.TransportPost.Transport.ContactEmail</a></p>
+                                            @* More text could go here in a similar format *@
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="TimeStamp">@item.TransportPost.TimeStamp</span><br />
+
+                        <span id="FoodType">@item.TransportPost.Message</span>
+                        <span id="PeopleFed">@item.TransportPost.StartTimeAvailable</span>
+                        <span id="Allergens">@item.TransportPost.EndTimeAvailable</span>
+                        <span id="Comments">@item.TransportPost.Comments</span>
+                    </div>
+                }
+                else
+                {
+                    <p>"There currently are no posts."</p>;
+                }
+            }
+
+        </div>
+
+
+        @*<table class="table">
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.TransportPost.Message)
@@ -114,7 +263,7 @@
                 </tr>
             }
 
-        </table>
+        </table>*@
 
     </div>
 </div>
