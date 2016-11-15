@@ -1,0 +1,54 @@
+﻿@model IEnumerable<GotFood.Models.Provider>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.OrgName)
+        </th>
+        <th>
+            Level
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.NumOfDonation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StarRating)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.OrgName)
+            </td>
+            <td>
+                <span>@ViewBag.Level</span>
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.NumOfDonation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StarRating)
+            </td>
+           
+            <td>
+                @Html.ActionLink("Donate", "Donate", new { id = item.ProviderID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ProviderID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProviderID })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -206,6 +206,7 @@
     <Compile Include="Controllers\ProvidersController.cs" />
     <Compile Include="Controllers\ProviderTransportationsController.cs" />
     <Compile Include="Controllers\ProviderTypesController.cs" />
+    <Compile Include="Controllers\ScoreBoardController.cs" />
     <Compile Include="Controllers\TransportPostsController.cs" />
     <Compile Include="Controllers\TransportsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -254,6 +255,10 @@
     <Compile Include="Migrations\201611111641164_AddEndTimeAvailable.cs" />
     <Compile Include="Migrations\201611111641164_AddEndTimeAvailable.Designer.cs">
       <DependentUpon>201611111641164_AddEndTimeAvailable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611141957250_AddedScoreBoardProperties.cs" />
+    <Compile Include="Migrations\201611141957250_AddedScoreBoardProperties.Designer.cs">
+      <DependentUpon>201611141957250_AddedScoreBoardProperties.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -389,6 +394,7 @@
     <Content Include="Views\MainFeeds\Details.cshtml" />
     <Content Include="Views\MainFeeds\Edit.cshtml" />
     <Content Include="Views\MainFeeds\Index.cshtml" />
+    <Content Include="Views\ScoreBoard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -432,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611111641164_AddEndTimeAvailable.resx">
       <DependentUpon>201611111641164_AddEndTimeAvailable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611141957250_AddedScoreBoardProperties.resx">
+      <DependentUpon>201611141957250_AddedScoreBoardProperties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
