@@ -45,7 +45,7 @@ namespace GotFood.Models
         public string GenFoodRequest { get; set; }
         [Display(Name ="Able to Provide Transportation for Food")]
         public string ProvideTransport { get; set; }
-        [Display(Name ="501 3C Number")]
+        [Display(Name ="EIN Number")]
         [Required]
         public string CharityNum { get; set; }
         public string Website { get; set; }

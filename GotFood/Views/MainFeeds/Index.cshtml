@@ -1,4 +1,6 @@
-﻿@model IEnumerable<GotFood.Models.MainFeed>
+﻿@*@model IEnumerable<GotFood.Models.MainFeed>*@
+@using GotFood.Models;
+@model dynamic
 
 @{
     ViewBag.Title = "Index";
@@ -55,27 +57,27 @@
         <h3>Food Available</h3>
 
         <div class="row">
-            @foreach (var item in Model)
+            @foreach ( ProviderPost item in Model.ProviderPosts)
             {
                 if (item != null)
                 {
                     <div class="col-xs-12 col-md-8 col-md-offset-2 chat">
                         @*<span class="ProviderName">@item.ProviderPost.Provider.OrgName</span>*@
                         <div class="container">
-                            <h2>@item.ProviderPost.Provider.OrgName</h2>
+                            <h2>@item.Provider.OrgName</h2>
                             <!-- Trigger the modal with a button -->
-                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="mega-octicon octicon-info"></i></button>
+                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#providerModal"><i class="glyphicon glyphicon-info-sign"></i></button>
                             <!-- Modal -->
-                            <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal fade" id="providerModal" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">@item.ProviderPost.Provider.OrgName</h4>
+                                            <h4 class="modal-title">@item.Provider.OrgName</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <p><a href="mailto:@item.ProviderPost.Provider.ContactEmail">@item.ProviderPost.Provider.ContactEmail</a></p>
+                                            <p><a href="mailto:@item.Provider.ContactEmail" target="_blank">@item.Provider.ContactEmail</a></p>
                                             @* More text could go here in a similar format *@
                                         </div>
                                         <div class="modal-footer">
@@ -85,14 +87,14 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="TimeStamp">@item.ProviderPost.TimeStamp</span><br />
+                        <span class="TimeStamp">@item.TimeStamp</span><br />
 
-                        <span id="FoodType">@item.ProviderPost.FoodType</span>
-                        <span id="PeopleFed">@item.ProviderPost.PeopleFed</span>
-                        <span id="Allergens">@item.ProviderPost.PotentialAllergens</span>
-                        <span id="ExpirationDate">@item.ProviderPost.ExpirationDate</span>
-                        <span id="SpecialTransport">@item.ProviderPost.SpecialTransport</span>
-                        <span id="Comments">@item.ProviderPost.Comments</span>
+                        <span id="FoodType">@item.FoodType</span>
+                        <span id="PeopleFed">@item.PeopleFed</span>
+                        <span id="Allergens">@item.PotentialAllergens</span>
+                        <span id="ExpirationDate">@item.ExpirationDate</span>
+                        <span id="SpecialTransport">@item.SpecialTransport</span>
+                        <span id="Comments">@item.Comments</span>
                     </div>
                 }
                 else
@@ -127,27 +129,26 @@
         <h3>Food Needed</h3>
 
         <div class="row">
-            @foreach (var item in Model)
+            @foreach (CharityPost item in Model.CharityPosts)
             {
                 if (item != null)
                 {
                     <div class="col-xs-12 col-md-8 col-md-offset-2 chat">
-                        @*<span class="ProviderName">@item.ProviderPost.Provider.OrgName</span>*@
                         <div class="container">
-                            <h2>@item.CharityPost.CharityProfile.CharityName</h2>
+                            <h2>@item.CharityProfile.CharityName</h2>
                             <!-- Trigger the modal with a button -->
-                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="mega-octicon octicon-info"></i></button>
+                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#charityModal"><i class="glyphicon glyphicon-info-sign"></i></button>
                             <!-- Modal -->
-                            <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal fade" id="charityModal" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">@item.CharityPost.CharityProfile.CharityName</h4>
+                                            <h4 class="modal-title">@item.CharityProfile.CharityName</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <p><a href="mailto:@item.CharityPost.CharityProfile.ContactEmail">@item.CharityPost.CharityProfile.ContactEmail</a></p>
+                                            <p><a href="mailto:@item.CharityProfile.ContactEmail" target="_blank">@item.CharityProfile.ContactEmail</a></p>
                                             @* More text could go here in a similar format *@
                                         </div>
                                         <div class="modal-footer">
@@ -157,13 +158,13 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="TimeStamp">@item.CharityPost.TimeStamp</span><br />
+                        <span class="TimeStamp">@item.TimeStamp</span><br />
 
-                        <span id="FoodType">@item.CharityPost.FoodRequested</span>
-                        <span id="PeopleFed">@item.CharityPost.WeightRequested</span>
-                        <span id="Allergens">@item.CharityPost.PeopleToFeed</span>
-                        <span id="ExpirationDate">@item.CharityPost.DateRequested</span>
-                        <span id="Comments">@item.CharityPost.Comments</span>
+                        <span id="FoodType">@item.FoodRequested</span>
+                        <span id="PeopleFed">@item.WeightRequested</span>
+                        <span id="Allergens">@item.PeopleToFeed</span>
+                        <span id="ExpirationDate">@item.DateRequested</span>
+                        <span id="Comments">@item.Comments</span>
                     </div>
                 }
                 else
@@ -199,27 +200,27 @@
         <h3>Food Transportation</h3>
 
         <div class="row">
-            @foreach (var item in Model)
+            @foreach (TransportPost item in Model.TransportPosts)
             {
                 if (item != null)
                 {
                     <div class="col-xs-12 col-md-8 col-md-offset-2 chat">
                         @*<span class="ProviderName">@item.ProviderPost.Provider.OrgName</span>*@
                         <div class="container">
-                            <h2>@item.TransportPost.Transport.OrganizationName</h2>
+                            <h2>@item.Transport.OrganizationName</h2>
                             <!-- Trigger the modal with a button -->
-                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="mega-octicon octicon-info"></i></button>
+                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#transModal"><i class="glyphicon glyphicon-info-sign"></i></button>
                             <!-- Modal -->
-                            <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal fade" id="transModal" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">@item.TransportPost.Transport.OrganizationName</h4>
+                                            <h4 class="modal-title">@item.Transport.OrganizationName</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <p><a href="mailto:@item.TransportPost.Transport.ContactEmail">@item.TransportPost.Transport.ContactEmail</a></p>
+                                            <p><a href="mailto:@item.Transport.ContactEmail" target="_blank">@item.Transport.ContactEmail</a></p>
                                             @* More text could go here in a similar format *@
                                         </div>
                                         <div class="modal-footer">
@@ -229,12 +230,12 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="TimeStamp">@item.TransportPost.TimeStamp</span><br />
+                        <span class="TimeStamp">@item.TimeStamp</span><br />
 
-                        <span id="FoodType">@item.TransportPost.Message</span>
-                        <span id="PeopleFed">@item.TransportPost.StartTimeAvailable</span>
-                        <span id="Allergens">@item.TransportPost.EndTimeAvailable</span>
-                        <span id="Comments">@item.TransportPost.Comments</span>
+                        <span id="FoodType">@item.Message</span>
+                        <span id="PeopleFed">@item.StartTimeAvailable</span>
+                        <span id="Allergens">@item.EndTimeAvailable</span>
+                        <span id="Comments">@item.Comments</span>
                     </div>
                 }
                 else

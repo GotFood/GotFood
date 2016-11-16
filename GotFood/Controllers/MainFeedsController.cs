@@ -7,20 +7,26 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using GotFood.Models;
+using System.Dynamic;
 
 namespace GotFood.Controllers
 {
     public class MainFeedsController : Controller
     {
         private GotFoodContext db = new GotFoodContext();
+        //private ProviderPost ProviderPost = new ProviderPost();
 
         // GET: MainFeeds
         public ActionResult Index()
         {
-            var mainFeeds = db.MainFeeds.Include(m => m.CharityPost).Include(m => m.ProviderPost).Include(m => m.TransportPost);
-            return View(mainFeeds.ToList());
+            //var mainFeeds = db.MainFeeds.Include(m => m.CharityPost).Include(m => m.ProviderPost).Include(m => m.TransportPost);
+            dynamic mymodel = new ExpandoObject();
+            mymodel.ProviderPosts = db.ProviderPosts;
+            mymodel.CharityPosts = db.CharityPosts;
+            mymodel.TransportPosts = db.TransportPosts;
+            return View(/*mainFeeds.ToList()*/mymodel);
         }
-
+        
         // GET: MainFeeds/Details/5
         public ActionResult Details(int? id)
         {
@@ -60,7 +66,7 @@ namespace GotFood.Controllers
             }
 
             ViewBag.CharityPostID = new SelectList(db.CharityPosts, "CharityPostID", "FoodRequested", mainFeed.CharityPostID);
-            ViewBag.ProviderPostID = new SelectList(db.ProviderPosts, "ProviderPostID", "FoodType", mainFeed.ProviderPostID);
+            ViewBag.ProviderPostID = new SelectList(db.ProviderPosts, "ProviderPostID", "ProviderPostID", mainFeed.ProviderPostID);
             ViewBag.TransportPostID = new SelectList(db.TransportPosts, "TransportPostID", "Message", mainFeed.TransportPostID);
             return View(mainFeed);
         }
