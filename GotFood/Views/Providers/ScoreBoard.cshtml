@@ -1,0 +1,88 @@
+﻿@model IEnumerable<GotFood.Models.Provider>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.OrgName)
+        </th>
+        <th>
+            Level
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.NumOfDonation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StarRating)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.OrgName)
+            </td>
+            <td>
+
+                @{
+                    string gameLevel;
+                    if (item.NumOfDonation >= 0 && item.NumOfDonation <= 5)
+                    {
+                        gameLevel = "1";
+                    }
+                    else if (item.NumOfDonation > 5 && item.NumOfDonation <= 12)
+                    {
+                        gameLevel = "2";
+                    }
+                    else if (item.NumOfDonation > 12 && item.NumOfDonation <= 24)
+                    {
+                        gameLevel = "3";
+                    }
+                    else if (item.NumOfDonation > 24 && item.NumOfDonation <= 35)
+                    {
+                        gameLevel = "4";
+                    }
+                    else if (item.NumOfDonation > 35 && item.NumOfDonation <= 50)
+                    {
+                        gameLevel = "5";
+                    }
+                    else if (item.NumOfDonation > 50)
+                    {
+                        gameLevel = "6";
+                    }
+                    else
+                    {
+                        gameLevel = "This is not a valid level.";
+                    }
+                    @gameLevel
+                }
+
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.NumOfDonation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StarRating)
+            </td>
+
+
+            <td>
+                @Html.ActionLink("Donate", "Donate", new { id = item.ProviderID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ProviderID }) |
+
+            </td>
+        </tr>
+                    }
+
+</table>

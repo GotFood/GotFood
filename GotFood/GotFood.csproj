@@ -206,7 +206,6 @@
     <Compile Include="Controllers\ProvidersController.cs" />
     <Compile Include="Controllers\ProviderTransportationsController.cs" />
     <Compile Include="Controllers\ProviderTypesController.cs" />
-    <Compile Include="Controllers\ScoreBoardController.cs" />
     <Compile Include="Controllers\TransportPostsController.cs" />
     <Compile Include="Controllers\TransportsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -282,6 +281,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\1120634-penguin_chick.jpg" />
+    <Content Include="Content\images\gerbil_standing_270x224.jpg" />
+    <Content Include="Content\images\kitten.jpg" />
+    <Content Include="Content\images\otter.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -394,7 +397,7 @@
     <Content Include="Views\MainFeeds\Details.cshtml" />
     <Content Include="Views\MainFeeds\Edit.cshtml" />
     <Content Include="Views\MainFeeds\Index.cshtml" />
-    <Content Include="Views\ScoreBoard\Index.cshtml" />
+    <Content Include="Views\Providers\ScoreBoard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
