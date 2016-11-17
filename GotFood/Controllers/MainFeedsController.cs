@@ -24,7 +24,7 @@ namespace GotFood.Controllers
             mymodel.ProviderPosts = db.ProviderPosts;
             mymodel.CharityPosts = db.CharityPosts;
             mymodel.TransportPosts = db.TransportPosts;
-            return View(/*mainFeeds.ToList()*/mymodel);
+            return View(mymodel);
         }
         
         // GET: MainFeeds/Details/5
