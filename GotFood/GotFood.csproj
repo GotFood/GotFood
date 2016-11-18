@@ -272,6 +272,7 @@
     <Compile Include="Migrations\201611141957250_AddedScoreBoardProperties.cs" />
     <Compile Include="Migrations\201611141957250_AddedScoreBoardProperties.Designer.cs">
       <DependentUpon>201611141957250_AddedScoreBoardProperties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201611161559394_AddedRoles.cs" />
     <Compile Include="Migrations\201611161559394_AddedRoles.Designer.cs">
       <DependentUpon>201611161559394_AddedRoles.cs</DependentUpon>
@@ -283,6 +284,10 @@
     <Compile Include="Migrations\201611161701436_FixedTransport.cs" />
     <Compile Include="Migrations\201611161701436_FixedTransport.Designer.cs">
       <DependentUpon>201611161701436_FixedTransport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611181902365_ScoreBoardWork.cs" />
+    <Compile Include="Migrations\201611181902365_ScoreBoardWork.Designer.cs">
+      <DependentUpon>201611181902365_ScoreBoardWork.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -476,9 +481,9 @@
     <EmbeddedResource Include="Migrations\201611111641164_AddEndTimeAvailable.resx">
       <DependentUpon>201611111641164_AddEndTimeAvailable.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Migrations\201611141957250_AddedScoreBoardProperties.resx">
       <DependentUpon>201611141957250_AddedScoreBoardProperties.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611161559394_AddedRoles.resx">
       <DependentUpon>201611161559394_AddedRoles.cs</DependentUpon>
     </EmbeddedResource>
@@ -487,6 +492,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611161701436_FixedTransport.resx">
       <DependentUpon>201611161701436_FixedTransport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611181902365_ScoreBoardWork.resx">
+      <DependentUpon>201611181902365_ScoreBoardWork.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
