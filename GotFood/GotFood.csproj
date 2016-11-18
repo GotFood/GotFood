@@ -269,11 +269,9 @@
     <Compile Include="Migrations\201611111641164_AddEndTimeAvailable.Designer.cs">
       <DependentUpon>201611111641164_AddEndTimeAvailable.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Migrations\201611141957250_AddedScoreBoardProperties.cs" />
     <Compile Include="Migrations\201611141957250_AddedScoreBoardProperties.Designer.cs">
       <DependentUpon>201611141957250_AddedScoreBoardProperties.cs</DependentUpon>
-=======
     <Compile Include="Migrations\201611161559394_AddedRoles.cs" />
     <Compile Include="Migrations\201611161559394_AddedRoles.Designer.cs">
       <DependentUpon>201611161559394_AddedRoles.cs</DependentUpon>
@@ -285,7 +283,6 @@
     <Compile Include="Migrations\201611161701436_FixedTransport.cs" />
     <Compile Include="Migrations\201611161701436_FixedTransport.Designer.cs">
       <DependentUpon>201611161701436_FixedTransport.cs</DependentUpon>
->>>>>>> master
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -309,17 +306,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-<<<<<<< HEAD
-    <Content Include="Content\images\1120634-penguin_chick.jpg" />
-    <Content Include="Content\images\gerbil_standing_270x224.jpg" />
-    <Content Include="Content\images\kitten.jpg" />
-    <Content Include="Content\images\otter.jpg" />
-=======
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\ionicons.css" />
     <Content Include="Content\ionicons.min.css" />
->>>>>>> master
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -486,10 +476,9 @@
     <EmbeddedResource Include="Migrations\201611111641164_AddEndTimeAvailable.resx">
       <DependentUpon>201611111641164_AddEndTimeAvailable.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
+
     <EmbeddedResource Include="Migrations\201611141957250_AddedScoreBoardProperties.resx">
       <DependentUpon>201611141957250_AddedScoreBoardProperties.cs</DependentUpon>
-=======
     <EmbeddedResource Include="Migrations\201611161559394_AddedRoles.resx">
       <DependentUpon>201611161559394_AddedRoles.cs</DependentUpon>
     </EmbeddedResource>
@@ -498,7 +487,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611161701436_FixedTransport.resx">
       <DependentUpon>201611161701436_FixedTransport.cs</DependentUpon>
->>>>>>> master
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
