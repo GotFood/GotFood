@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -49,8 +50,10 @@ namespace GotFood.Models
         [Required]
         public string CharityNum { get; set; }
         public string Website { get; set; }
-        
 
+        //[ForeignKey("ApplicationUser")]
+        //public string Id { get; set; }
+        //public virtual ApplicationUser ApplicationUser { get; set; }
 
     }
 }

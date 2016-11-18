@@ -9,9 +9,13 @@ using System.Web.Mvc;
 using GotFood.Models;
 using System.IO;
 using System.Web.UI.WebControls;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace GotFood.Controllers
 {
+    [Authorize(Roles ="Charity")]
+
     public class CharityProfilesController : Controller
     {
         private GotFoodContext db = new GotFoodContext();
@@ -19,6 +23,11 @@ namespace GotFood.Controllers
         // GET: CharityProfiles
         public ActionResult Index()
         {
+            UserManager<ApplicationUser> UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            ApplicationUser currentUser = UserManager.FindById(User.Identity.GetUserId());
+
+            //List<CharityProfile> charityProfiles = db.CharityProfiles.Where(c => c.ApplicationUser.Id.Equals(currentUser.Id)).OrderByDescending(c => c.ChatID).ToList();
+
             return View(db.CharityProfiles.ToList());
         }
 

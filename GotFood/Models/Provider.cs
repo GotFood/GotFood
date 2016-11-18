@@ -46,5 +46,12 @@ namespace GotFood.Models
         [Display(Name = "Transportation?")]
         public int TranspoID { get; set; }
         public virtual ProviderTransportation ProviderTransportation { get; set; }
+
+        //[ForeignKey("ApplicationUser")]
+        //public string Id { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
+
+        //public virtual ICollection<ApplicationUser> ApplicationUsers { get; set; }
     }
+
 }

@@ -10,6 +10,8 @@ using GotFood.Models;
 
 namespace GotFood.Controllers
 {
+    [Authorize(Roles ="Food Donor")]
+
     public class ProviderPostsController : Controller
     {
         private GotFoodContext db = new GotFoodContext();

@@ -281,6 +281,18 @@
     <Compile Include="Migrations\201611161701436_FixedTransport.Designer.cs">
       <DependentUpon>201611161701436_FixedTransport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611172024511_WorkPlease.cs" />
+    <Compile Include="Migrations\201611172024511_WorkPlease.Designer.cs">
+      <DependentUpon>201611172024511_WorkPlease.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611181517365_C.cs" />
+    <Compile Include="Migrations\201611181517365_C.Designer.cs">
+      <DependentUpon>201611181517365_C.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611181613117_Life.cs" />
+    <Compile Include="Migrations\201611181613117_Life.Designer.cs">
+      <DependentUpon>201611181613117_Life.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CharityPost.cs" />
@@ -474,6 +486,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611161701436_FixedTransport.resx">
       <DependentUpon>201611161701436_FixedTransport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611172024511_WorkPlease.resx">
+      <DependentUpon>201611172024511_WorkPlease.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611181517365_C.resx">
+      <DependentUpon>201611181517365_C.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611181613117_Life.resx">
+      <DependentUpon>201611181613117_Life.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
