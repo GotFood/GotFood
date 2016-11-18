@@ -7,14 +7,14 @@ namespace GotFood.Migrations
     {
         public override void Up()
         {
-            DropColumn("dbo.Providers", "NumOfDonation");
-            DropColumn("dbo.Providers", "StarRating");
+            //DropColumn("dbo.Providers", "NumOfDonation");
+            //DropColumn("dbo.Providers", "StarRating");
         }
         
         public override void Down()
         {
-            AddColumn("dbo.Providers", "StarRating", c => c.Int(nullable: false));
-            AddColumn("dbo.Providers", "NumOfDonation", c => c.Int(nullable: false));
+            //AddColumn("dbo.Providers", "StarRating", c => c.Int(nullable: false));
+            //AddColumn("dbo.Providers", "NumOfDonation", c => c.Int(nullable: false));
         }
     }
 }
