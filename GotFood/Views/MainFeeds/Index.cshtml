@@ -1,4 +1,6 @@
-﻿@model IEnumerable<GotFood.Models.MainFeed>
+﻿@*@model IEnumerable<GotFood.Models.MainFeed>*@
+@using GotFood.Models;
+@model dynamic
 
 @{
     ViewBag.Title = "Index";
@@ -55,27 +57,30 @@
         <h3>Food Available</h3>
 
         <div class="row">
-            @foreach (var item in Model)
+            @foreach ( ProviderPost item in Model.ProviderPosts)
             {
                 if (item != null)
                 {
-                    <div class="col-xs-12 col-md-8 col-md-offset-2 chat">
+                    <div class="col-xs-12 col-md-8 col-md-offset-2 chat" id="ProvPost">
                         @*<span class="ProviderName">@item.ProviderPost.Provider.OrgName</span>*@
-                        <div class="container">
-                            <h2>@item.ProviderPost.Provider.OrgName</h2>
+                        <div class="container" id="post">
+                            <h2>@item.Provider.OrgName</h2>
                             <!-- Trigger the modal with a button -->
-                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="mega-octicon octicon-info"></i></button>
+                            <a href="" class="open" data-toggle="modal" data-target="#providerModal"><i class="ionicons ion-ios-information"></i></a>
                             <!-- Modal -->
-                            <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal fade" id="providerModal" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">@item.ProviderPost.Provider.OrgName</h4>
+                                            <h4 class="modal-title">@item.Provider.OrgName</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <p><a href="mailto:@item.ProviderPost.Provider.ContactEmail">@item.ProviderPost.Provider.ContactEmail</a></p>
+                                            <p><strong>@Html.DisplayNameFor(modelitem => item.Provider.ContactName):</strong> @item.Provider.ContactName</p>
+                                            <p><strong>@Html.DisplayNameFor(modelitem => item.Provider.ContactPhone):</strong> @item.Provider.ContactPhone</p>
+                                            <p><strong>@Html.DisplayNameFor(modelitem => item.Provider.ContactEmail):</strong><a href="mailto:@item.Provider.ContactEmail" target="_blank">@item.Provider.ContactEmail</a></p>
+                                            <p><strong>@Html.DisplayNameFor(modelitem => item.Provider.Website):</strong><a href="http://@item.Provider.Website" target="_blank">@item.Provider.Website</a></p>
                                             @* More text could go here in a similar format *@
                                         </div>
                                         <div class="modal-footer">
@@ -85,14 +90,21 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="TimeStamp">@item.ProviderPost.TimeStamp</span><br />
-
-                        <span id="FoodType">@item.ProviderPost.FoodType</span>
-                        <span id="PeopleFed">@item.ProviderPost.PeopleFed</span>
-                        <span id="Allergens">@item.ProviderPost.PotentialAllergens</span>
-                        <span id="ExpirationDate">@item.ProviderPost.ExpirationDate</span>
-                        <span id="SpecialTransport">@item.ProviderPost.SpecialTransport</span>
-                        <span id="Comments">@item.ProviderPost.Comments</span>
+                        
+                        <h5 id="FoodType">@Html.DisplayNameFor(modelitem => item.FoodType)</h5>
+                        <span id="FoodType">@item.FoodType</span>
+                        <h5 id="PeopleFedLabel">@Html.DisplayNameFor(modelitem => item.PeopleFed)</h5>
+                        <span id="PeopleFed">@item.PeopleFed</span>
+                        <h5 id="AllergensLabel">@Html.DisplayNameFor(modelitem => item.PotentialAllergens)</h5>
+                        <span id="Allergens">@item.PotentialAllergens</span>
+                        <h5 id="ExpirationDateLabel">@Html.DisplayNameFor(modelitem => item.ExpirationDate)</h5>
+                        <span id="ExpirationDate">@item.ExpirationDate</span>
+                        <h5 id="SpecialTransportLabel">@Html.DisplayNameFor(modelitem => item.SpecialTransport)</h5>
+                        <span id="SpecialTransport">@item.SpecialTransport</span>
+                        <h5 id="CommentsLabel">@Html.DisplayNameFor(modelitem => item.Comments)</h5>
+                        <span id="Comments">@item.Comments</span>
+                        <h5 id="TimeStampLabel">@Html.DisplayNameFor(modelitem => item.TimeStamp)</h5>
+                        <span class="TimeStamp">@item.TimeStamp</span><br />
                     </div>
                 }
                 else
@@ -102,6 +114,8 @@
             }
 
         </div>
+
+
 
 
         @*<table class="table">
@@ -127,27 +141,26 @@
         <h3>Food Needed</h3>
 
         <div class="row">
-            @foreach (var item in Model)
+            @foreach (CharityPost item in Model.CharityPosts)
             {
                 if (item != null)
                 {
                     <div class="col-xs-12 col-md-8 col-md-offset-2 chat">
-                        @*<span class="ProviderName">@item.ProviderPost.Provider.OrgName</span>*@
-                        <div class="container">
-                            <h2>@item.CharityPost.CharityProfile.CharityName</h2>
+                        <div class="container" id="post">
+                            <h2>@item.CharityProfile.CharityName</h2>
                             <!-- Trigger the modal with a button -->
-                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="mega-octicon octicon-info"></i></button>
+                            <a href="" class="open" data-toggle="modal" data-target="#charityModal"><i class="ionicons ion-ios-information"></i></a>
                             <!-- Modal -->
-                            <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal fade" id="charityModal" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">@item.CharityPost.CharityProfile.CharityName</h4>
+                                            <h4 class="modal-title">@item.CharityProfile.CharityName</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <p><a href="mailto:@item.CharityPost.CharityProfile.ContactEmail">@item.CharityPost.CharityProfile.ContactEmail</a></p>
+                                            <p><a href="mailto:@item.CharityProfile.ContactEmail" target="_blank">@item.CharityProfile.ContactEmail</a></p>
                                             @* More text could go here in a similar format *@
                                         </div>
                                         <div class="modal-footer">
@@ -157,13 +170,19 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="TimeStamp">@item.CharityPost.TimeStamp</span><br />
-
-                        <span id="FoodType">@item.CharityPost.FoodRequested</span>
-                        <span id="PeopleFed">@item.CharityPost.WeightRequested</span>
-                        <span id="Allergens">@item.CharityPost.PeopleToFeed</span>
-                        <span id="ExpirationDate">@item.CharityPost.DateRequested</span>
-                        <span id="Comments">@item.CharityPost.Comments</span>
+                        
+                        <h5 id="FoodRequestedLabel">@Html.DisplayNameFor(modelitem => item.FoodRequested)</h5>
+                        <span id="FoodRequested">@item.FoodRequested</span>
+                        <h5 id="WeightRequestedLabel">@Html.DisplayNameFor(modelitem => item.WeightRequested)</h5>
+                        <span id="WeightRequested">@item.WeightRequested</span>
+                        <h5 id="PeopleToFeedLabel">@Html.DisplayNameFor(modelitem => item.PeopleToFeed)</h5>
+                        <span id="PeopleToFeed">@item.PeopleToFeed</span>
+                        <h5 id="ExpirationDateLabel">@Html.DisplayNameFor(modelitem => item.DateRequested)</h5>
+                        <span id="ExpirationDate">@item.DateRequested</span>
+                        <h5 id="CommentsLabel">@Html.DisplayNameFor(modelitem => item.Comments)</h5>
+                        <span id="Comments">@item.Comments</span>
+                        <h5 id="TimeStampLabel">@Html.DisplayNameFor(modelitem => item.TimeStamp)</h5>
+                        <span class="TimeStamp">@item.TimeStamp</span><br />
                     </div>
                 }
                 else
@@ -199,27 +218,27 @@
         <h3>Food Transportation</h3>
 
         <div class="row">
-            @foreach (var item in Model)
+            @foreach (TransportPost item in Model.TransportPosts)
             {
                 if (item != null)
                 {
                     <div class="col-xs-12 col-md-8 col-md-offset-2 chat">
                         @*<span class="ProviderName">@item.ProviderPost.Provider.OrgName</span>*@
-                        <div class="container">
-                            <h2>@item.TransportPost.Transport.OrganizationName</h2>
+                        <div class="container" id="post">
+                            <h2>@item.Transport.OrganizationName<i class="fa fa-truck" aria-hidden="true"></i></h2>
                             <!-- Trigger the modal with a button -->
-                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="mega-octicon octicon-info"></i></button>
+                            <a href="" class="open" data-toggle="modal" data-target="#transModal"><i class="ionicons ion-ios-information"></i></a>
                             <!-- Modal -->
-                            <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal fade" id="transModal" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">@item.TransportPost.Transport.OrganizationName</h4>
+                                            <h4 class="modal-title">@item.Transport.OrganizationName</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <p><a href="mailto:@item.TransportPost.Transport.ContactEmail">@item.TransportPost.Transport.ContactEmail</a></p>
+                                            <p><a href="mailto:@item.Transport.ContactEmail" target="_blank">@item.Transport.ContactEmail</a></p>
                                             @* More text could go here in a similar format *@
                                         </div>
                                         <div class="modal-footer">
@@ -229,12 +248,17 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="TimeStamp">@item.TransportPost.TimeStamp</span><br />
-
-                        <span id="FoodType">@item.TransportPost.Message</span>
-                        <span id="PeopleFed">@item.TransportPost.StartTimeAvailable</span>
-                        <span id="Allergens">@item.TransportPost.EndTimeAvailable</span>
-                        <span id="Comments">@item.TransportPost.Comments</span>
+                        
+                        <h5 id="MessageLabel">@Html.DisplayNameFor(modelitem => item.Message)</h5>
+                        <span id="Message">@item.Message</span>
+                        <h5 id="CommentsLabel">@Html.DisplayNameFor(modelitem => item.Comments)</h5>
+                        <span id="PeopleFed">@item.StartTimeAvailable</span>
+                        <h5 id="CommentsLabel">@Html.DisplayNameFor(modelitem => item.Comments)</h5>
+                        <span id="Allergens">@item.EndTimeAvailable</span>
+                        <h5 id="CommentsLabel">@Html.DisplayNameFor(modelitem => item.Comments)</h5>
+                        <span id="Comments">@item.Comments</span>
+                        <h5 id="TimeStampLabel">@Html.DisplayNameFor(modelitem => item.TimeStamp)</h5>
+                        <span class="TimeStamp">@item.TimeStamp</span><br />
                     </div>
                 }
                 else

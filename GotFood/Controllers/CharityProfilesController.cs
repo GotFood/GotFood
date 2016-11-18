@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using GotFood.Models;
+using System.IO;
+using System.Web.UI.WebControls;
 
 namespace GotFood.Controllers
 {
@@ -19,6 +21,24 @@ namespace GotFood.Controllers
         {
             return View(db.CharityProfiles.ToList());
         }
+
+        [HttpPost]
+    public ActionResult Index(HttpPostedFileBase postedFile)
+    {
+        if (postedFile != null)
+        {
+            string path = Server.MapPath("~/Uploads/");
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+ 
+            postedFile.SaveAs(path + Path.GetFileName(postedFile.FileName));
+            ViewBag.Message = "File uploaded successfully.";
+        }
+ 
+        return View();
+    }
 
         // GET: CharityProfiles/Details/5
         public ActionResult Details(int? id)
