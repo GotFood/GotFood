@@ -13,9 +13,9 @@ namespace GotFood.Migrations
             DropIndex("dbo.IdentityUserClaims", new[] { "ApplicationUser_Id" });
             AddColumn("dbo.Providers", "NumOfDonation", c => c.Int(nullable: false));
             AddColumn("dbo.Providers", "StarRating", c => c.Int(nullable: false));
-            DropColumn("dbo.Providers", "ApplicationUser_Id");
-            DropTable("dbo.ApplicationUsers");
-            DropTable("dbo.IdentityUserClaims");
+            //DropColumn("dbo.Providers", "ApplicationUser_Id");
+            //DropTable("dbo.ApplicationUsers");
+            //DropTable("dbo.IdentityUserClaims");
         }
         
         public override void Down()
