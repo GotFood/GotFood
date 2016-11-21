@@ -1,6 +1,9 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url('pexels-photo-41123.jpeg');
+    background-size:cover;
+    font-family: 'Muli', sans-serif;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -53,6 +56,26 @@ textarea {
         color: #454444;
     }
 
+h2, i{
+    margin-left: -16px;
+}
+
 h5{
-    font-weight:700; 
+    font-weight:700;
+}
+
+.chat{
+    background-color:white;
+    border-radius:35px;
+    padding-bottom:25px;
+    
+}
+i.ionicons.ion-ios-information{
+    font-size:larger;
+}
+.navber-brand{
+    font-size:xx-large;
+}
+.navbar{
+    font-family: 'Chelsea Market', cursive;
 }
