@@ -34,7 +34,14 @@ namespace GotFood.Models
         public string Website { get; set; }
         [Display(Name = "Foods Generally Available: ")]
         public string Foods { get; set; }
+        public Provider()
+        {
+            this.NumOfDonation = 0;
+            this.StarRating = 0;
+        }
 
+        public int NumOfDonation { get; set; }
+        public int StarRating { get; set; }
 
         [ForeignKey("ProviderType")]
         [Display(Name = "Provider Type")]

@@ -14,6 +14,47 @@ namespace GotFood.Controllers
     {
         private GotFoodContext db = new GotFoodContext();
 
+        // GET: ScoreBoard
+        public ActionResult ScoreBoard()
+        {
+
+            var providers = db.Providers.Include(p => p.ProviderTransportation).Include(p => p.ProviderType);
+
+            return View(providers.ToList());
+
+        }
+
+        //GET: Increase Donations
+        public ActionResult Donate(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Provider provider = db.Providers.Find(id);
+
+            if (provider == null)
+            {
+                return HttpNotFound();
+            }
+
+            provider.NumOfDonation++;
+
+
+            if (ModelState.IsValid)
+            {
+                db.Entry(provider).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("ScoreBoard");
+            }
+
+
+            return RedirectToAction("ScoreBoard");
+        }
+
+
+
         // GET: Providers
         public ActionResult Index()
         {
@@ -33,6 +74,8 @@ namespace GotFood.Controllers
             {
                 return HttpNotFound();
             }
+
+          
             return View(provider);
         }
 
